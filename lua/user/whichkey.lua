@@ -10,30 +10,14 @@ function M.config()
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["e"] = { "<cmd>Neotree<CR>", "Explorer" },
     ["s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "replace word"},
-    ["x"] = {"<cmd>!chmod +x %<CR>","make current file executable"},
-    ["H"] = {"<cmd>lua require('user.extras.harpoon').mark_file()<cr>", "Harpoon"},
+    ["S"] = { "<cmd> SessionSave" , "Save current session"},
+    ["x"] = { "<cmd>!chmod +x %<CR>","make current file executable"},
+    ["H"] = { "<cmd>lua require('user.extras.harpoon').mark_file()<cr>", "Harpoon"},
     ["<leader>"] = {function() vim.cmd("luafile ~/.config/nvim/init.lua") end, "reload lua file"},
 
     b = {
       name = "Buffers",
       b = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-    },
-    d = {
-      name = "Debug",
-      t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-      b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
-      c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-      C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
-      d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
-      g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
-      i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
-      o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
-      u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
-      p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
-      r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-      s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
-      q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
-      U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
     },
     f = {
       name = "Find",
@@ -56,7 +40,6 @@ function M.config()
       u = { "<cmd>Telescope undo<cr>", "Undo Tree" },
       S = { "<cmd>Telescope persisted<cr>", "Sessions" },
     },
-
     g = {
       name = "Git",
       g = { "<cmd>Neogit<cr>", "Neogit" },
@@ -83,7 +66,6 @@ function M.config()
         "Git Diff",
       },
     },
-
     l = {
       name = "LSP",
       a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
